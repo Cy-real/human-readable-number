@@ -2,7 +2,7 @@ module.exports = function toReadable (number)
 {
   let num = number.toString();
   let temp = num.split('');
-  let arr_digits = ["one","two", "three", "four", "five", "six", "seven", "eight", "nine"];
+  let arr_digits = ["zero", "one","two", "three", "four", "five", "six", "seven", "eight", "nine"];
   let arr_tens = ["twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eighty", "ninety", "hundred"];
   let arr_remaining = ["ten", "eleven", "twelwe", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
 
@@ -18,8 +18,16 @@ module.exports = function toReadable (number)
     }
     else
     {
-      let answer = arr_tens[temp[0]-2] + arr_digits[temp[1]-1];
-      return answer;
+      if(temp[1] != 0)
+      {
+        let answer = arr_tens[temp[0]-2] + arr_digits[temp[1]-1];
+        return answer;
+      }
+      else
+      {
+        let answer = arr_tens[temp[0]-2];
+        return answer;
+      }
     }
   }
   else if(num.length == 3)
@@ -34,8 +42,16 @@ module.exports = function toReadable (number)
     }
     else
     {
-      answer+= arr_tens[temp[1]-2] + " " + arr_digits[temp[2]-1];
-      return answer;
+      if(temp[2] != 0)
+      {
+        answer+= arr_tens[temp[1]-2] + " " + arr_digits[temp[2]-1];
+        return answer;
+      }
+      else
+      {
+        answer+= arr_tens[temp[1]-2];
+        return answer;
+      }
     }
   }
 }
