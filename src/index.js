@@ -44,13 +44,28 @@ module.exports = function toReadable (number)
     {
       if(temp[2] != 0)
       {
-        answer+= arr_tens[temp[1]-2] + " " + arr_digits[temp[2]];
-        return answer;
-      }
+        if(temp[1] != 0)
+        {    
+          answer+= arr_tens[temp[1]-2] + " " + arr_digits[temp[2]];
+          return answer;
+        }
+        else
+        {
+          answer+= arr_digits[temp[2]];
+          return answer;
+        }
+      }  
       else
       {
-        answer+= arr_tens[temp[1]-2];
-        return answer;
+        if(temp[1] != 0)
+        {    
+          answer+= arr_tens[temp[1]-2];
+          return answer;
+        }
+        else
+        {
+            return answer;
+        }
       }
     }
   }
