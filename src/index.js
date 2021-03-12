@@ -4,7 +4,7 @@ module.exports = function toReadable (number)
   let temp = num.split('');
   let arr_digits = ["zero", "one","two", "three", "four", "five", "six", "seven", "eight", "nine"];
   let arr_tens = ["twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eighty", "ninety", "hundred"];
-  let arr_remaining = ["ten", "eleven", "twelwe", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
+  let arr_remaining = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
 
   if (num.length == 1)
   {
