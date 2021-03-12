@@ -64,7 +64,8 @@ module.exports = function toReadable (number)
         }
         else
         {
-            return answer;
+          let ans = answer.slice(0,answer.length-1);
+          return ans;
         }
       }
     }
