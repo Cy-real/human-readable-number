@@ -20,7 +20,7 @@ module.exports = function toReadable (number)
     {
       if(temp[1] != 0)
       {
-        let answer = arr_tens[temp[0]-2] + arr_digits[temp[1]];
+        let answer = arr_tens[temp[0]-2] + " " + arr_digits[temp[1]];
         return answer;
       }
       else
@@ -29,7 +29,7 @@ module.exports = function toReadable (number)
         return answer;
       }
     }
-  }
+   }
   else if(num.length == 3)
   {
     let answer = arr_digits[temp[0]] + " hundred ";
