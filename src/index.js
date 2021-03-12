@@ -8,7 +8,7 @@ module.exports = function toReadable (number)
 
   if (num.length == 1)
   {
-    return arr_digits[number-1];
+    return arr_digits[number];
   }
   else if(num.length == 2)
   {
@@ -20,7 +20,7 @@ module.exports = function toReadable (number)
     {
       if(temp[1] != 0)
       {
-        let answer = arr_tens[temp[0]-2] + arr_digits[temp[1]-1];
+        let answer = arr_tens[temp[0]-2] + arr_digits[temp[1]];
         return answer;
       }
       else
@@ -32,7 +32,7 @@ module.exports = function toReadable (number)
   }
   else if(num.length == 3)
   {
-    let answer = arr_digits[temp[0]-1] + " hundred ";
+    let answer = arr_digits[temp[0]] + " hundred ";
     if(temp[1] == 1)
     {
       let t =[temp[1], temp[2]];
@@ -44,7 +44,7 @@ module.exports = function toReadable (number)
     {
       if(temp[2] != 0)
       {
-        answer+= arr_tens[temp[1]-2] + " " + arr_digits[temp[2]-1];
+        answer+= arr_tens[temp[1]-2] + " " + arr_digits[temp[2]];
         return answer;
       }
       else
